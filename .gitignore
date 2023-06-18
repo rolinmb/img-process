@@ -1,4 +1,7 @@
-/miniz-master
+/examples
+ChangeLog.md
+LICENSE
+
 *.exe
 
 miniz.c
