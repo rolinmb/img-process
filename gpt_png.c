@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 //#include <zlib.h>
+#include "miniz.h"
 
 #define SIG_SIZE 8
 #define IHDR_SIZE 25

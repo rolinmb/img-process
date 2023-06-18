@@ -1,1 +1,5 @@
+/miniz-master
 *.exe
+
+miniz.c
+miniz.h
