@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 //#include <zlib.h>
-#include "miniz.h"
 
 #define SIG_SIZE 8
 #define IHDR_SIZE 25
@@ -99,6 +98,7 @@ int main(void){
 			printf("\n");
 		}
 	}
+	// can't decompress without implementation of DEFLATE/INFLATE algorithm
 	/*
 	// Instantiate z_stream to decompress the data (doesn't work on windows...)
 	z_stream stream;
