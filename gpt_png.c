@@ -4,13 +4,13 @@
 #include <zlib.h>
 
 void view_all_bytes(long n_bytes,FILE* fp){
-  printf("\nTotal .png file size (bytes): %ld\n",n_bytes);
-  // allocating memory to store read bytes
-  unsigned char* bufr = (unsigned char*)malloc(n_bytes);
-  if(!bufr){
-    printf("\nFailed to allocate memory to read .PNG file.\n\n");
+	printf("\nTotal .png file size (bytes): %ld\n",n_bytes);
+	// allocating memory to store read bytes
+	unsigned char* bufr = (unsigned char*)malloc(n_bytes);
+	if(!bufr){
+		printf("\nFailed to allocate memory to read .PNG file.\n\n");
 		fclose(fp);
-    exit(1);
+		exit(1);
 	}
 	// read bytes into bufr
 	size_t bytes_read = fread(bufr,1,n_bytes,fp);
@@ -28,8 +28,8 @@ void view_all_bytes(long n_bytes,FILE* fp){
 		}
 	}
 	free(bufr);
-  rewind(fp);
-  printf("\n");
+	rewind(fp);
+	printf("\n");
 }
 // Must compile with -lz tag at the end of args
 int main(void){
