@@ -11,8 +11,8 @@ import (
 )
 
 func main(){
-	// pngFile, err := os.Open("bg1i.png")
-	pngFile, err := os.Open("cramer.png")
+	pngFile, err := os.Open("bg1i.png")
+	//pngFile, err := os.Open("cramer.png")
     if err != nil{
 		log.Fatal(err)
 	}
