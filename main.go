@@ -11,8 +11,9 @@ import (
 )
 
 func main(){
-	pngFile, err := os.Open("bg1i.png")
-	if err != nil{
+	// pngFile, err := os.Open("bg1i.png")
+	pngFile, err := os.Open("cramer.png")
+    if err != nil{
 		log.Fatal(err)
 	}
     defer pngFile.Close()
@@ -20,13 +21,14 @@ func main(){
     if err != nil{
         log.Fatal(err)
     }
-    fmt.Println("Decoded .png file bytes:\n")
-    fmt.Println(decoded)
+    fmt.Println("Number of bytes in .png file: "+string(decoded.Bounds().Max.X)+"x"+string(decoded.Bounds().Max.Y))
+    // fmt.Println(decoded)
     fmt.Println("\nType of pngFile =",reflect.TypeOf(pngFile))
     fmt.Println("Type of decoded =",reflect.TypeOf(decoded))
+    fmt.Println()
 
 
-    levels := []string{" ", "░", "▒", "▓", "█"}
+    levels := []string{".", "o", "O", "0","@"}
     for y:= decoded.Bounds().Min.Y; y < decoded.Bounds().Max.Y; y++{
         for x:= decoded.Bounds().Min.X; x < decoded.Bounds().Max.X; x++{
             c := color.GrayModel.Convert(decoded.At(x,y)).(color.Gray)
