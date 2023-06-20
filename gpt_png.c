@@ -115,7 +115,7 @@ int main(void){
 		fclose(fp);
 		return 1;
 	}
-	if(inflate(&stream,Z_FINISH) != Z_STREAM_END){
+	if(inflate(&stream,Z_FINISH) != Z_STREAM_END){ // breaks here
 		printf("\nFailed to INFLATE/decompress .PNG IDAT chunk bytes. Error code %s\n\n",stream.msg);
 		inflateEnd(&stream);
 		free(compressed);
