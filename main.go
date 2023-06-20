@@ -20,5 +20,6 @@ func main(){
     }
     fmt.Println("Decoded .png file bytes:\n")
     fmt.Println(decoded)
-    fmt.Println("Type of decoded:",reflect.TypeOf(decoded))
+    fmt.Println("\nType of pngFile =",reflect.TypeOf(pngFile))
+    fmt.Println("Type of decoded =",reflect.TypeOf(decoded))
 }

@@ -4,7 +4,7 @@ from skimage import filters
 FSB = Image.FLOYDSTEINBERG
 import time
 
-def checImgkModes(img1,img2):
+def checkImgModes(img1,img2):
     if img1.mode != '1':
         img1 = img1.convert('1')
     if img2.mode != '1':
