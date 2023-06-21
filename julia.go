@@ -11,19 +11,18 @@ import (
 )
 
 const (
-	width  = 800
-	height = 800
+	width  = 5000
+	height = 5000
 	xmin, xmax = -2, 2
 	ymin, ymax = -2, 2
 	maxIterations = 200
-    fout = "demo_results/julia_set.png"
+    fout = "new_pngs/julia_set.png"
 )
 
 func main() {
 	newPng := image.NewRGBA(image.Rect(0, 0, width, height))
     // Julia Set Constant
     const c = complex(-0.8, 0.156)
-	// Iterate over each pixel
 	for py := 0; py < height; py++ {
 		y := float64(py)/height*(ymax-ymin) + ymin
 		for px := 0; px < width; px++ {
@@ -32,7 +31,6 @@ func main() {
 			iterations := calculateIterations(z, c)
 			// Map the number of iterations to a color
 			color := getColor(iterations)
-			// Set the pixel color in the image
 			newPng.Set(px, py, color)
 		}
 	}
@@ -54,7 +52,7 @@ func calculateIterations(z complex128, c complex128) int {
 		if cmplx.Abs(z) > 2 {
 			break
 		}
-		z = z*z + c
+		z = z*z + c // Julia Set equation
 		iterations++
 	}
 	return iterations

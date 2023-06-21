@@ -24,4 +24,10 @@ mb.go main() Example (6/21/2023 12:05AM CST): <br /><br />
 ![here](demo_results/mandelbrot.png) <br /><br />
 julia.go -> generates a .png of the [julia set](https://en.wikipedia.org/wiki/Julia_set) (in the location of your choosing) <br />
 mb.go main() Example (6/21/2023 12:30AM CST): <br /><br />
-![here](demo_results/julia_set.png) <br /><br />
+![here](demo_results/julia_set.png) <br /><br /> 
+newton.go -> generates a .png of the [newton fractal](https://www.unf.edu/~ddreibel/teaching/newton/index.html) (in the location of your choosing) <br /> 
+newton.go main() Example (6/21/2023 12:25PM CST): <br /><br />
+![here](demo_results/newton_fractal.png) <br /><br />
+bs.go -> generates a .png of the [burning ship fracta](https://en.wikipedia.org/wiki/Burning_Ship_fractal) (in the location of your choosing). This one probably needs the most rendering to give an interesting picture. <br />
+bs.go main() Example(6/21/2023 1:05PM CST): <br /><br />
+![here](demo_results/burning_ship.png) <br /><br />

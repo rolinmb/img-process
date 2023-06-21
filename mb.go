@@ -9,29 +9,25 @@ import (
 )
 
 const (
-	width  = 4000
-	height = 4000
+	width  = 5000
+	height = 5000
     fout = "new_pngs/mb.png"
 )
 
 func main() {
-	// Create a new RGBA image
 	newPng := image.NewRGBA(image.Rect(0, 0, width, height))
 	// Define the boundaries and scaling factors for the Mandelbrot Set
 	xmin, xmax := -2.0, 1.0
 	ymin, ymax := -1.5, 1.5
 	xscale := (xmax - xmin) / float64(width)
 	yscale := (ymax - ymin) / float64(height)
-	// Iterate over each pixel and calculate the corresponding Mandelbrot value
 	for px := 0; px < width; px++ {
 		for py := 0; py < height; py++ {
 			x := float64(px)*xscale + xmin
 			y := float64(py)*yscale + ymin
-			// Calculate the Mandelbrot value for the current point
 			mandelbrotValue := mandelbrot(x, y)
 			// Map the Mandelbrot value to a color
 			color := getColor(mandelbrotValue)
-			// Set the pixel color in the image
 			newPng.Set(px, py, color)
 		}
 	}
