@@ -9,8 +9,12 @@ may need ot zoom out a lot to see the full image generated. Will compartmentaliz
 
 bg1i.png and cramer.png supplied as demo images; bg1i_terminal_06202023_440PMCST.png is the terminal output from processing bg1i.png
 
-main.go Example (6/20/2023 8:50PM CST):
-main.go Test 1 Input = ![here](bg1i.png)
-main.go Test 1 Output = ![here](bg1i_terminal_06202023_440PMCST.png)
-main.go Test 2 Input = ![here](cramer.png)
-main.go Test 2 Output = ![here](cramer_terminal_05202023_8PMCST.png)
+main.go cmdPrint() Example (6/20/2023 11:50PM CST): <br /> <br />
+main.go Test 1 Input = ![here](demo_results/bg1i.png) <br />
+main.go Test 1 Output = ![here](demo_results/bg1i_terminal_06202023_440PMCST.png) <br />
+main.go Test 2 Input = ![here](demo_results/cramer.png) <br />
+main.go Test 2 Output = ![here](demo_results/cramer_terminal_05202023_8PMCST.png) <br /> <br />
+main.go trippyPng() Example (6/20/2023 11:50PM CST): <br /> <br />
+![here](demo_results/trippy16_06202023.png) <br /> <br />
+main.go noisyPng() Example(6/20/2023 11:50PM CST): <br /> <br />
+![here](demo_results/noisy4_06202023.png) <br /> <br /> 
