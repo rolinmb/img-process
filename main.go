@@ -11,8 +11,8 @@ import (
 )
 
 func main(){
-	pngFile, err := os.Open("bg1i.png")
-	//pngFile, err := os.Open("cramer.png")
+	// pngFile, err := os.Open("bg1i.png")
+	pngFile, err := os.Open("cramer.png")
     if err != nil{
 		log.Fatal(err)
 	}
@@ -28,7 +28,7 @@ func main(){
     fmt.Println()
 
 
-    levels := []string{".", "o", "O", "0","@"}
+    levels := []string{".", "o", "Æ", "&","@"}
     for y:= decoded.Bounds().Min.Y; y < decoded.Bounds().Max.Y; y++{
         for x:= decoded.Bounds().Min.X; x < decoded.Bounds().Max.X; x++{
             c := color.GrayModel.Convert(decoded.At(x,y)).(color.Gray)
