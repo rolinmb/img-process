@@ -18,3 +18,8 @@ main.go trippyPng() Example (6/20/2023 11:50PM CST): <br /> <br />
 ![here](demo_results/trippy16_06202023.png) <br /> <br />
 main.go noisyPng() Example(6/20/2023 11:50PM CST): <br /> <br />
 ![here](demo_results/noisy4_06202023.png) <br /> <br /> 
+
+mb.go -> generates a .png of the [mandlebrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) (in the folder demo_results)
+
+mb.go main() Example (6/21/2023 12:05AM CST): <br /><br />
+![here](demo_results/mandelbrot.png)
