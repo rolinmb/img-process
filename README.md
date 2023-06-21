@@ -9,7 +9,6 @@ may need ot zoom out a lot to see the full image generated. Will compartmentaliz
 
 bg1i.png and cramer.png supplied as demo images; bg1i_terminal_06202023_440PMCST.png is the terminal output from processing bg1i.png
 
-Example (8:50PM CST)
-Input = ![here](bg1i.png)
-
-Output = ![here](bg1i_terminal_06202023_440PMCST.png)
+main.go Example (6/20/2023 8:50PM CST):
+main.go Input = ![here](bg1i.png)
+main.go Output = ![here](bg1i_terminal_06202023_440PMCST.png)
