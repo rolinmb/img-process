@@ -10,14 +10,13 @@ import (
     "os"
 )
 
-func main(){
-	// pngFile, err := os.Open("bg1i.png")
-	pngFile, err := os.Open("cramer.png")
-    if err != nil{
+func cmdPrint(fname string){
+	pngFile, err := os.Open(fname)
+	if err != nil{
 		log.Fatal(err)
 	}
-    defer pngFile.Close()
-    decoded, err := png.Decode(pngFile)
+	defer pngFile.Close()
+	decoded, err := png.Decode(pngFile)
     if err != nil{
         log.Fatal(err)
     }
@@ -26,9 +25,7 @@ func main(){
     fmt.Println("\nType of pngFile =",reflect.TypeOf(pngFile))
     fmt.Println("Type of decoded =",reflect.TypeOf(decoded))
     fmt.Println()
-
-
-    levels := []string{".", "o", "Æ", "&","@"}
+    levels := []string{".", "o", "Æ", "&","@"} // characters to map to pixel brightness/darkness
     for y:= decoded.Bounds().Min.Y; y < decoded.Bounds().Max.Y; y++{
         for x:= decoded.Bounds().Min.X; x < decoded.Bounds().Max.X; x++{
             c := color.GrayModel.Convert(decoded.At(x,y)).(color.Gray)
@@ -40,7 +37,12 @@ func main(){
         }
         fmt.Print("\n")
     }
+	pngFile.Close()
+}
 
+func main(){
+	var fname = "cramer.png"
+	cmdPrint(fname)
     /*
     newPng := image.NewRGBA(image.Rect(0,0,12,6)) // Empty image matrix
     out,err := os.Create("new.png")
@@ -48,5 +50,4 @@ func main(){
     fmt.Println("\nSuccessfully created/rewritten new.png.\n")
     out.Close()
     */
-    pngFile.Close()
 }
