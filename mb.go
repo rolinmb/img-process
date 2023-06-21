@@ -9,13 +9,14 @@ import (
 )
 
 const (
-	width  = 800
-	height = 800
+	width  = 4000
+	height = 4000
+    fout = "new_pngs/mb.png"
 )
 
 func main() {
 	// Create a new RGBA image
-	img := image.NewRGBA(image.Rect(0, 0, width, height))
+	newPng := image.NewRGBA(image.Rect(0, 0, width, height))
 	// Define the boundaries and scaling factors for the Mandelbrot Set
 	xmin, xmax := -2.0, 1.0
 	ymin, ymax := -1.5, 1.5
@@ -31,21 +32,19 @@ func main() {
 			// Map the Mandelbrot value to a color
 			color := getColor(mandelbrotValue)
 			// Set the pixel color in the image
-			img.Set(px, py, color)
+			newPng.Set(px, py, color)
 		}
 	}
-	// Create the output file
-	file, err := os.Create("demo_results/mandelbrot.png")
+	newFile, err := os.Create(fout)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-	// Encode the image as PNG and save it to the file
-	err = png.Encode(file, img)
+	defer newFile.Close()
+	err = png.Encode(newFile, newPng)
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Println("Mandelbrot Set image saved as mandelbrot.png")
+	log.Println("Mandelbrot Set image saved as",fout)
 }
 
 func mandelbrot(x, y float64) int {
