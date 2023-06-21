@@ -47,8 +47,8 @@ func main(){
     rand.Seed(time.Now().UnixNano())
 	// var fname := "cramer.png"
 	// cmdPrint(fname)
-    dest1 := "new_pngs/trippy17.png"
-    dest2 := "new_pngs/noisy5.png"
+    dest1 := "new_pngs/trippy20.png"
+    dest2 := "new_pngs/noisy8.png"
 	w := 1000
 	h := 1000
     newTrippyPng := image.NewRGBA(image.Rect(0,0,w,h))
@@ -80,9 +80,9 @@ func main(){
 func trippyPng(newPng *image.RGBA, width int, height int) {
     for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
-			r := uint8((x - y) % 256)
-			g := uint8((x*x*y + y*y*x) % 256)
-			b := uint8((x*y*x + y*x*y) % 256)
+			r := uint8((x+y) % 256)
+			g := uint8((x*x*x*x + y*y*x) % 256)
+			b := uint8((x*x*y + y*y*y*y) % 256)
 			a := uint8(255)
 			newPng.SetRGBA(x, y, color.RGBA{r, g, b, a})
 		}
@@ -92,9 +92,9 @@ func trippyPng(newPng *image.RGBA, width int, height int) {
 func noisePng(newPng *image.RGBA, width int, height int) {
     for i := 0; i < width; i++ {
         for j := 0; j < height; j++ {
-            r := uint8(math.Sin(float64(j+(1/(j+1)))/float64(rand.Intn(50))) * 127 + 128)
+            r := uint8(math.Sin(float64(j-(1/(j+1)))/float64(rand.Intn(50))) * 127 + 128)
 			g := uint8(math.Cos(float64(i*j)/float64(rand.Intn(50))) * 127 + 128)
-			b := uint8(math.Sin(float64(i+j)/float64(rand.Intn(100))) * 127 + 128)
+			b := uint8(math.Sin(float64(i*j)/float64(rand.Intn(100))) * 127 + 128)
 			a := uint8(255)
             newPng.SetRGBA(i,j,color.RGBA{r, g, b, a})
             rVariation := uint8(rand.Intn(50))

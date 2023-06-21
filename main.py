@@ -111,16 +111,19 @@ def edgeDetect(f_in,out):
 if __name__ == "__main__":
     start = time.time()
     #raw = "IMG_0766_crop.png"
-    raw2 = "cramer_crop.png"
-    raw = "IMG_0766_i.png"
+    # raw = "new_pngs/trippy0.png"
+    raw = "new_pngs/trippy3.png"
+    raw2 = "new_pngs/trippy16.png"
     #raw2 = "cramer_i.png"
-    out_name1 = "cramer_0766I_and.png"
-    out_name2 = "cramer_0766I_or.png"
-    out_name3 = "cramer_0766I_xor.png"
+    #out_name = "out.png"
     #cropping(raw,out_name,0,0,720,720)
     #invertColor(raw,out_name)
-    andComp(raw,raw2,out_name1)
-    orComp(raw,raw2,out_name2)
-    xorComp(raw,raw2,out_name3)
+    addComp(raw,raw2,"new_pngs/trippy3_16_add.png")
+    addCompMod(raw,raw2,"new_pngs/trippy3_16_addmod.png")
+    subComp(raw,raw2,"new_pngs/trippy3_16_sub.png")
+    subCompMod(raw,raw2,"new_pngs/trippy3_16_submod.png")
+    andComp(raw,raw2,"new_pngs/trippy3_16_and.png")
+    orComp(raw,raw2,"new_pngs/trippy3_16_or.png")
+    xorComp(raw,raw2,"new_pngs/trippy3_16_xor.png")
     #edgeDetect(raw,out_name)
     print('Execution Time: %s seconds'%round(time.time()-start,2))

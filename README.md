@@ -29,5 +29,8 @@ newton.go -> generates a .png of the [newton fractal](https://www.unf.edu/~ddrei
 newton.go main() Example (6/21/2023 12:25PM CST): <br /><br />
 ![here](demo_results/newton_fractal.png) <br /><br />
 bs.go -> generates a .png of the [burning ship fracta](https://en.wikipedia.org/wiki/Burning_Ship_fractal) (in the location of your choosing). This one probably needs the most rendering to give an interesting picture. <br />
-bs.go main() Example(6/21/2023 1:05PM CST): <br /><br />
+bs.go main() Example (6/21/2023 1:05PM CST): <br /><br />
 ![here](demo_results/burning_ship.png) <br /><br />
+tchebi.go -> generates a .png of [tchebichef fractals](https://arxiv.org/abs/2102.10640) (in the location of your choosing) <br />
+tchebi.go main() Example (6/21/2023 1:30 PM): <br /><br />
+![here](https://en.wikipedia.org/wiki/Chebyshev_polynomials) <br /><br />
