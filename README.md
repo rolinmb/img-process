@@ -32,5 +32,4 @@ bs.go -> generates a .png of the [burning ship fracta](https://en.wikipedia.org/
 bs.go main() Example (6/21/2023 1:05PM CST): <br /><br />
 ![here](demo_results/burning_ship.png) <br /><br />
 tchebi.go -> generates a .png of [tchebichef fractals](https://arxiv.org/abs/2102.10640) (in the location of your choosing) <br />
-tchebi.go main() Example (6/21/2023 1:30 PM): <br /><br />
-![here](https://en.wikipedia.org/wiki/Chebyshev_polynomials) <br /><br />
+tchebi.go not currently functioning; takes too long to finish execution (infinite loop perhaps)
