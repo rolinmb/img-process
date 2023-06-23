@@ -54,10 +54,10 @@ func main(){
     // trippyPng("new_pngs/trippy33.png", width, height)
     // trippyPng2("new_pngs/trippy_v2_10.png", width, height)
     // trippyPng3("new_pngs/trippy_v3_10.png", width, height)
-    // trippyPng4("new_pngs/trippy_v4_41.png", width, height)
+    trippyPng4("new_pngs/trippy_v4_45pm.png", width, height)
     // trippyPng5("new_pngs/trippy_v5_12.png", width, height)
 	// trippyPng6("new_pngs/trippy_v6_1.png", width, height)
-	trippyPng7("new_pngs/trippy_v7_1.png", width, height)
+	// trippyPng7("new_pngs/trippy_v7_1.png", width, height)
 	// randomPng("new_pngs/new_rand.png", width, height)
 	// trippyFx("new_pngs/trippy31.png", "new_pngs/trippy31_fx2.png")
 	// interpolatePngs("new_pngs/trippy_v5_0.png", "new_pngs/trippy_v4_3.png", "new_pngs/trippy_interp_19.png", 0.00875)
@@ -117,9 +117,9 @@ func trippyPng(fname string, width int, height int) {
     newPng := image.NewRGBA(image.Rect(0,0,width,height))
     for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
-			r := uint8((x+(y*y))*((x*x)+(y*y)) % 256)
-			g := uint8((x-(x*y))*((x*x)-(y*y)) % 256)
-			b := uint8(((x*y*y)+(x*x*y))*((x*x*x)+(y*y*y)) % 256)
+			r := uint8((x+(y*y))*((x)+(y)) % 256)
+			g := uint8(((x*y))*((x)-(y*y)) % 256)
+			b := uint8(((y)+(x))*((x)-(y)) % 256)
 			a := uint8(255)
 			newPng.SetRGBA(x, y, color.RGBA{r, g, b, a})
 		}
@@ -187,8 +187,8 @@ func applyDistortion(x, y int) (int, int) {
 	amplitude := 50.0
 	frequency := 0.02
 	phase := 0.0
-	dx := x + int(amplitude*math.Sin(frequency*float64(y)+phase))
-	dy := y + int(amplitude*math.Sin(frequency*float64(x)+phase))
+	dx := x + int(amplitude*math.Sin(frequency*float64(x)+phase))
+	dy := y + int(amplitude*math.Sin(frequency*float64(y)+phase))
 	dx = clamp(dx, 0, width-1)
 	dy = clamp(dy, 0, height-1)
 	return dx, dy
@@ -205,7 +205,7 @@ func clamp(value, min, max int) int {
 }
 
 func calcColor3(x, y int) (uint8, uint8, uint8) {
-	angle := math.Pi * scale * float64((x*x*x*x*x*y)-(y*y*y*y*y*x))
+	angle := math.Pi * scale * float64((x)-(y))
 	distance := math.Sqrt(math.Pow(float64(x-width/2), 2) + math.Pow(float64(y-height/2), 2))
 	frequency := distance * scale
 	r := uint8(math.Sin(angle*complexity+frequency)*colorFactor + 128)
