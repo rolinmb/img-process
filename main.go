@@ -54,7 +54,7 @@ func main(){
     // trippyPng("new_pngs/trippy33.png", width, height)
     // trippyPng2("new_pngs/trippy_v2_10.png", width, height)
     // trippyPng3("new_pngs/trippy_v3_10.png", width, height)
-    trippyPng4("new_pngs/trippy_v4_45pm.png", width, height)
+    trippyPng4("new_pngs/trippy_v4_46.png", width, height)
     // trippyPng5("new_pngs/trippy_v5_12.png", width, height)
 	// trippyPng6("new_pngs/trippy_v6_1.png", width, height)
 	// trippyPng7("new_pngs/trippy_v7_1.png", width, height)
@@ -164,8 +164,8 @@ func calcColor2(x, y int) (uint8, uint8, uint8) {
 	distance := math.Sqrt(math.Pow(float64(x-width/2), 2) + math.Pow(float64(y-height/2), 2))
 	angle := math.Atan2(float64(y-height/2), float64(x-width/2))
 	geometryValue := math.Abs(math.Sin(distance*scale*geometrySize) * math.Cos(angle))
-	r := uint8((math.Sin(math.Pow(floatX, floatY)-geometryValue*math.Pi) + 1) * 0.5 * 255)
-	g := uint8((math.Cos(math.Pow(floatY, floatX)-geometryValue*math.Pi) + 1) * 0.5 * 255)
+	r := uint8((math.Sin(math.Pow(floatX, floatX)-geometryValue*math.Pi) + 1) * 0.5 * 255)
+	g := uint8((math.Cos(math.Pow(floatY, floatY)-geometryValue*math.Pi) + 1) * 0.5 * 255)
 	b := uint8((math.Sin(math.Pow(floatX+floatY, floatX-floatY)-geometryValue*math.Pi*2) + 1) * 0.5 * 255)
 	return r, g, b
 }
