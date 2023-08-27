@@ -26,10 +26,13 @@ julia.go -> generates a .png of the [julia set](https://en.wikipedia.org/wiki/Ju
 mb.go main() Example (6/21/2023 12:30AM CST): <br /><br />
 ![here](demo_results/julia_set.png) <br /><br /> 
 newton.go -> generates a .png of the [newton fractal](https://www.unf.edu/~ddreibel/teaching/newton/index.html) (in the location of your choosing) <br /> 
-newton.go main() Example (6/21/2023 12:25PM CST): <br /><br />
+Example (6/21/2023 12:25PM CST): <br /><br />
 ![here](demo_results/newton_fractal.png) <br /><br />
 bs.go -> generates a .png of the [burning ship fracta](https://en.wikipedia.org/wiki/Burning_Ship_fractal) (in the location of your choosing). This one probably needs the most rendering to give an interesting picture. <br />
 bs.go main() Example (6/21/2023 1:05PM CST): <br /><br />
 ![here](demo_results/burning_ship.png) <br /><br />
 tchebi.go -> generates a .png of [tchebichef fractals](https://arxiv.org/abs/2102.10640) (in the location of your choosing) <br />
+mandelbulb.go -> generates a .png of the [mandelbulb fractal](https://en.wikipedia.org/wiki/Mandelbulb) (in the location of your choosing) <br /> 
+Example (8/27/2023 3:00PM CST): <br /><br />
+![here](demo_results/mandelbulb.png) <br /><br />
 tchebi.go not currently functioning; takes too long to finish execution (infinite loop perhaps)
