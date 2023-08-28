@@ -42,7 +42,7 @@ func main() {
 }
 
 func mandelbulb(x, y float64) int {
-  const maxIters = 2500
+  const maxIters = 10000
   const escapeRadius = 2
   var zx, zy, zz, zx2, zy2, zz2 float64
   for i := 0; i < maxIters; i++ {
@@ -50,8 +50,8 @@ func mandelbulb(x, y float64) int {
       return i
     }
     zz = 2*zx*zz + y
-	zx = zx2 - zy2 + zz2 + x
-	zy = 2*zx*zy + y
+	  zx = zx2 - zy2 + zz2 + x
+	  zy = 2*zx*zy + y
     zx2 = zx*zx
     zy2 = zy*zy
     zz2 = zz*zz
@@ -60,8 +60,8 @@ func mandelbulb(x, y float64) int {
 }
 
 func getColor(iterations int) color.Color {
-  if iterations == 1000 {
+  if iterations == 10000 {
     return color.Black
   }
-  return color.RGBA{uint8(iterations % 255), 0, 0, 255}
+  return color.RGBA{uint8(iterations % 255), uint8(iterations % 255), uint8(iterations % 255), 255}
 }

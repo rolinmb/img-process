@@ -29,7 +29,6 @@ func main() {
 			x := float64(px)/width*(xmax-xmin) + xmin
 			z := complex(x, y)
 			iterations := calculateIterations(z)
-			// Map the number of iterations to a color
 			color := getColor(iterations)
 			newPng.Set(px, py, color)
 		}
@@ -59,9 +58,6 @@ func calculateIterations(z complex128) int {
 }
 
 func getColor(iterations int) color.Color {
-	// Assign a color based on the number of iterations
-	// You can modify this function to customize the color mapping
-	// based on your preference
 	if iterations == maxIterations {
 		return color.Black
 	}
